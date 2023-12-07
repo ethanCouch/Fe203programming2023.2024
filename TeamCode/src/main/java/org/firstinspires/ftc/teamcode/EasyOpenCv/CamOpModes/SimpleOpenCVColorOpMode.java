@@ -15,7 +15,7 @@ import org.openftc.easyopencv.OpenCvWebcam;
 
 import java.util.ArrayList;
 
-@Autonomous(name="SimpleOpenCVOpMode")
+@Autonomous(name="SimpleOpenCVColorOpMode")
 public class SimpleOpenCVColorOpMode extends OpMode {
     //Resolution
     static final int STREAM_WIDTH = 1280; // modify for your camera
