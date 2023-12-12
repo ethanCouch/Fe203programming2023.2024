@@ -23,6 +23,17 @@ public class SimpleOpenCVColorOpMode extends OpMode {
     OpenCvWebcam webcam;
     SimpleOpenCVColorPipeline pipeline;
 
+    //      Create booleans Red and Blue
+
+    Boolean Blue = false;
+
+    Boolean Red = false;
+
+
+    // Red/Blue threshold
+    int IsBlueThreshold = 130;
+    int IsRedThreshold = 130;
+
     @Override
     public void init() {
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
@@ -49,11 +60,7 @@ public class SimpleOpenCVColorOpMode extends OpMode {
     @Override
     public void loop() {
 
-//      Create booleans Red and Blue
 
-        Boolean Blue = false;
-
-        Boolean Red = false;
 
 //      Define YCrCbAnalysis so I don't have to keep typing "pipeline.get" :)
 //      note: if this becomes an issue for memory/bandwidth replace this:
@@ -62,18 +69,18 @@ public class SimpleOpenCVColorOpMode extends OpMode {
         double CbAnalysis = pipeline.getCbAnalysis();
 
 //      If red-differance > 130 and blue-differance < 130 Blue = true
-        if(CrAnalysis < 130)
+        if(CrAnalysis < IsRedThreshold)
         {
-            if(CbAnalysis > 130)
+            if(CbAnalysis > IsBlueThreshold)
             {
                 Blue = true;
             }
         }
 
 //      If blue-difference > 130 and red-difference < 130: Red = true
-        if(CbAnalysis < 130)
+        if(CbAnalysis < IsBlueThreshold)
         {
-            if(CrAnalysis > 130)
+            if(CrAnalysis > IsRedThreshold)
             {
                 Red = true;
             }

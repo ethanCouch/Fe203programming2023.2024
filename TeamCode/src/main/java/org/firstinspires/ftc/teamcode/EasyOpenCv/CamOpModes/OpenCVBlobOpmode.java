@@ -77,9 +77,6 @@ public class OpenCVBlobOpmode extends OpMode {
 
 // Show blobs
         telemetry.addData("keypoints:", pipeline.getBlobAnalysis());
-        // Display the image with keypoints
-        Core.imshow("Keypoints", im);
-        Core.waitKey(0);
 
     }
 }
@@ -93,10 +90,11 @@ class SimpleOpenCVBlobPipeline extends OpenCvPipeline {
     public Mat processFrame(Mat input) {
 
         try {
+
 // Read image
             BlobImg = Imgcodecs.imread("blob.jpg", Imgcodecs.IMREAD_GRAYSCALE);
 
-            Imgproc.cvtColor(input, BlobImg, Imgproc.COLOR_RGB2GRAY);
+//            Imgproc.cvtColor(input, BlobImg, Imgproc.COLOR_RGB2GRAY);
 
 //      Set min/max thresholds:
             params.set_minThreshold(50);
@@ -108,9 +106,7 @@ class SimpleOpenCVBlobPipeline extends OpenCvPipeline {
 
 // Create a detector with the parameters
 // OLD: detector = cv2.SimpleBlobDetector(params)
-            SimpleBlobDetector detector = SimpleBlobDetector.create(params);
-
-            keypoints = detector.detect(BlobImg);
+//            SimpleBlobDetector detector = SimpleBlobDetector.create(params);
 
             SimpleBlobDetector.create(params).detect(BlobImg, keypoints);
 
@@ -130,4 +126,6 @@ class SimpleOpenCVBlobPipeline extends OpenCvPipeline {
     }
 
     public Mat getBlobAnalysis() {return im_with_keypoints;}
-}
+    }
+
+
