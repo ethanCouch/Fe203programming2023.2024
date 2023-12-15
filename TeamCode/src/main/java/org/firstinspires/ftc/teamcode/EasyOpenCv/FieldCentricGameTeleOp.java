@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.drive.opmode;
+package org.firstinspires.ftc.teamcode.EasyOpenCv;
 
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -6,6 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.teamcode.drive.opmode.subsystems.slideOpmode;
 
 /* Copyright (c) 2017 FIRST. All rights reserved.
  *
@@ -42,18 +44,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
     Need to test all systems once robot is (theoretically) functioning
 */
 
-
-        import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-        import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-        import com.qualcomm.robotcore.hardware.DcMotor;
-        import com.qualcomm.robotcore.hardware.DcMotorSimple;
-        import com.qualcomm.robotcore.util.ElapsedTime;
-        import com.qualcomm.robotcore.util.Range;
-
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.teamcode.drive.opmode.subsystems.slideOpmode;
-
-@TeleOp(name="Game Opmode", group="Linear Opmode")
+@TeleOp(name="Field Centric Game Opmode", group="Linear Opmode")
 //@Disabled
 public class FieldCentricGameTeleOp extends LinearOpMode {
 
