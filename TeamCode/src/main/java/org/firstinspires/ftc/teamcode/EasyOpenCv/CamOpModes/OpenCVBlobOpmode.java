@@ -43,7 +43,7 @@ public class OpenCVBlobOpmode extends OpMode {
     //Resolution
     static final int STREAM_WIDTH = 1280; // modify for your camera
     static final int STREAM_HEIGHT = 720; // modify for your camera
-    OpenCvWebcam webcam; 
+    OpenCvWebcam webcam;
     SimpleOpenCVBlobPipeline pipeline;
 
     @Override
