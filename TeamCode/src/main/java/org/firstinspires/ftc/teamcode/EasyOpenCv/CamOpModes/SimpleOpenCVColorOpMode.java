@@ -24,14 +24,15 @@ public class SimpleOpenCVColorOpMode extends OpMode {
     SimpleOpenCVColorPipeline pipeline;
 
     //      Create booleans Red and Blue
+
     Boolean Blue = false;
 
     Boolean Red = false;
 
 
     // Red/Blue threshold
-    int BlueThreshold = 130;
-    int RedThreshold = 130;
+    int IsBlueThreshold = 130;
+    int IsRedThreshold = 130;
 
     @Override
     public void init() {
@@ -68,18 +69,18 @@ public class SimpleOpenCVColorOpMode extends OpMode {
         double CbAnalysis = pipeline.getCbAnalysis();
 
 //      If red-differance > 130 and blue-differance < 130 Blue = true
-        if(CrAnalysis < RedThreshold)
+        if(CrAnalysis < IsRedThreshold)
         {
-            if(CbAnalysis > BlueThreshold)
+            if(CbAnalysis > IsBlueThreshold)
             {
                 Blue = true;
             }
         }
 
 //      If blue-difference > 130 and red-difference < 130: Red = true
-        if(CbAnalysis < BlueThreshold)
+        if(CbAnalysis < IsBlueThreshold)
         {
-            if(CrAnalysis > RedThreshold)
+            if(CrAnalysis > IsRedThreshold)
             {
                 Red = true;
             }
